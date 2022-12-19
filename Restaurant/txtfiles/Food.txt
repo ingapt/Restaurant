@@ -1,0 +1,32 @@
+﻿1. Dienos pietūs. 3,70
+2. Cezario salotos. 2,50
+3. Itališkos salotos. 2,50
+4. Graikiškos salotos. 2,50
+5. Bulvių salotos. 2,50
+6. Pupelių sriuba. 0,80
+7. Braščiai. 0,80
+8. Šiupininė. 0,80
+9. Šaltibarščiai. 1,30
+10. Karbonadas su daržovėmis. 4,00
+11. Naminis kotletas su daržovėmis. 4,00
+12. "Kijevo" kotletas su daržovėmis. 4,00
+13. Sprandinės kepsnys su daržovėmis. 4,50
+14. Kiaulienos šašlykas su daržovėmis. 4,00
+15. Vištienos šašlykas su daržovėmis. 3,80
+16. Cepelinai. 3,80
+17. Kepti cepelinai. 3,50
+18. Bulviniai blynai. 3,50
+19. Bulviniai blynai su mėsa. 4,00
+20. Bulviniai blynai su varške. 4,50
+21. Žemaičių blynai. 4,00
+22. Lietiniai blynai su varške. 3,50
+23. Lietiniai blynai su mėsa. 3,80
+24. Makaronų ir tuno apkepas. 3,80
+25. Citrininė žuvies filė. 3,50
+26. Žuvies kotletai su daržovėmis. 3,80
+27. Orkaitėje kepta lašiša traškia plutele. 4,00
+28. Obuolių pyragas. 3,50
+29. Vyšnių desertas su jogurtu ir riešutais. 4,50
+30. Tiramisu. 3,50
+31. Itališkas marskoponės desertas. 3,50
+32. Ledų asorti. 3,50

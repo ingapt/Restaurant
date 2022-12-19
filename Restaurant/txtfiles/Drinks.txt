@@ -1,0 +1,24 @@
+﻿1. Arbata. 2,50
+2. Latte kava. 3,50
+3. Juoda kava. 3,50
+4. Expresso kava. 2,00
+5. Apelsinų sultys. 3,50
+6. Ananasų sultys. 3,50
+7. Multivitaminų sultys. 3,50
+8. Obuolių sultys. 3,50
+9. Braškinis pieniškas kokteilis. 4,50
+10. Vanilinis pieniškas koteilis. 4,50
+11. Koktelis "Ledkalnis". 4,50
+12. Tamsus alus. 3,00
+13. Šviesus alus. 3,00
+14. Sausas vynas. 3,50
+15. Saldus vynas. 3,50
+16. Karštas vynas. 3,50
+17. Sausas šampanas. 3,50
+18. Pusiau sausas šampanas. 3,50
+19. Pusiau saldus šampanas. 3,50
+20. Saldus šampanas. 3,50
+21. Alkoholinis kokteilis. 4,00
+22. Brendis. 4,00
+23. Degtinė. 4,00
+24. Konjakas. 4,00

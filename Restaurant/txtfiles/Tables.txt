@@ -1,0 +1,15 @@
+﻿1, 4, true
+2, 3, true
+3, 6, true
+4, 2, true
+5, 4, true
+6, 3, true
+7, 4, true
+8, 3, true
+9, 2, true
+10, 4, true
+11, 6, true
+12, 6, true
+13, 4, true
+14, 2, true
+15, 6, true

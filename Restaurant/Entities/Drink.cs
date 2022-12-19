@@ -2,13 +2,13 @@
 {
 	public class Drink
 	{
-		public int ID { get; set; }
+		public int Id { get; set; }
 		public string Name { get; set; }
 		public double Price { get; set; }
 
-		public Drink(int iD, string name, double price)
+		public Drink(int id, string name, double price)
 		{
-			ID = iD;
+			Id = id;
 			Name = name;
 			Price = price;
 		}
