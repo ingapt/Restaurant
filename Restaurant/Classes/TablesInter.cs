@@ -1,4 +1,7 @@
-﻿namespace Restaurant.Classes
+﻿using Restaurant.Entities;
+using Restaurant.Repositories;
+
+namespace Restaurant.Classes
 {
 	public class TablesInter
 	{
@@ -6,29 +9,38 @@
 		{
 			bool toDoTablesInter = true;
 			Validation validation = new Validation();
+			TableUpdate tableUpdate = new TableUpdate();
+			TableDelete tableDelete = new TableDelete();
+			TableInsert tableInsert = new TableInsert();
+			TableRepository.CreateTables();
 
 			while (toDoTablesInter)
 			{
 				Console.Clear();
-				Console.WriteLine("[1] Staliukų sąrašas \n[2] Sukurti naują staliuką \n[3] Ištrinti esamą staliuką \n[4] Grįžti atgal");
+				Console.WriteLine("[1] Staliukų sąrašas \n[2] Įterpti naują staliuką \n[3] Atnaujinti esamą staliuką  \n[4] Ištrinti esamą staliuką \n[5] Grįžti atgal");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite:");
-				var input = validation.GetValidNumbersOfFourFromConsole();
+				var input = validation.GetValidNumbersFromConsole(5);
 				switch (input)
 				{
 					case 1:
-						Console.WriteLine("Čia spausdinamas staliukų sąrašas");
+						Console.WriteLine("Staliukų sąrašas: ");
+						TableRepository.DisplayTables();
 						Console.ReadKey();
 						break;
 					case 2:
-						Console.WriteLine("Čia naujų staliukų įterpimas");
+						tableInsert.InsertTableInTablesList();
 						Console.ReadKey();
 						break;
 					case 3:
-						Console.WriteLine("Čia esamų staliukų ištrinimas");
+						tableUpdate.UpdateTableInTablesList();
 						Console.ReadKey();
 						break;
 					case 4:
+						tableDelete.DeleteTableFromTablesList();
+						Console.ReadKey();
+						break;
+					case 5:
 						toDoTablesInter = false;
 						break;
 					default:

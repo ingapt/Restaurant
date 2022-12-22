@@ -11,7 +11,7 @@
 			{
 				Console.Clear();
 				Console.WriteLine("[1] Užsakymų informacija \n[2] Kurti užsakymą \n[3] Naikinti užsakymą \n[4] Grįžti atgal");
-				var input = validation.GetValidNumbersOfFourFromConsole();
+				var input = validation.GetValidNumbersFromConsole(4);
 				switch (input)
 				{
 					case 1:

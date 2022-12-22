@@ -13,7 +13,7 @@
 				Console.WriteLine("[1] Staliukai \n[2] Užsakymai \n[3] Čekiai \n[4] Baigti");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite: ");
-				var choise = validation.GetValidNumbersOfFourFromConsole();
+				var choise = validation.GetValidNumbersFromConsole(4);
 				switch (choise)
 				{
 					case 1:

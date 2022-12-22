@@ -13,7 +13,7 @@
 				Console.WriteLine("[1] Čekiai \n[2] Kurti čekį \n[3] Ištrinti čekį \n[4] Grįžti atgal");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite: ");
-				var input = validation.GetValidNumbersOfFourFromConsole();
+				var input = validation.GetValidNumbersFromConsole(4);
 				switch (input)
 				{
 					case 1:

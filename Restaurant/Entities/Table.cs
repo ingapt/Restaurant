@@ -2,15 +2,15 @@
 {
 	public class Table
 	{
-		public int TableNum { get; set; }
+		public int Num { get; set; }
 		public int SeatsNum { get; set; }
-		public bool TableStatus { get; set; }
+		public bool Status { get; set; }
 
-		public Table(int tableNum, int seatsNum, bool tableStatus)
+		public Table(int num, int seatsNum, bool status)
 		{
-			TableNum = tableNum;
+			Num = num;
 			SeatsNum = seatsNum;
-			TableStatus = tableStatus;
+			Status = status;
 		}
 
 		public Table() { }
