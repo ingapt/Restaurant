@@ -1,36 +1,42 @@
-﻿namespace Restaurant.Classes
+﻿using Restaurant.Entities;
+using Restaurant.Repositories;
+
+namespace Restaurant.Classes
 {
 	public class Unit
 	{
-		public void Start()
+		public static void Start()
 		{
+			MainRepository<Item> foodRepository = new MainRepository<Item>();
+			foodRepository.ReadDataFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\food.json");
+			MainRepository<Item> drinkRepository = new MainRepository<Item>();
+			drinkRepository.ReadDataFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\drinks.json");
+			TableRepository.ReadTablesFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json");
 			bool toDoProgram = true;
-			Validation validation = new Validation();
 
 			while (toDoProgram)
 			{
 				Console.Clear();
-				Console.WriteLine("[1] Staliukai \n[2] Užsakymai \n[3] Čekiai \n[4] Baigti");
+				Console.WriteLine("[1] Užsakymai \n[2] Čekiai \n[3] Staliukai \n[4] Patiekalai ir gėrimai \n[5] Baigti");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite: ");
-				var choise = validation.GetValidNumbersFromConsole(4);
-				switch (choise)
+				var input = Validation.GetValidNumbersFromConsole(5);
+				switch (input)
 				{
 					case 1:
-						
-						var tablesInter = new TablesInter();
-						tablesInter.Start();
+						OrderInter.Start();
 						break;
 					case 2:
-						var orderInter = new OrderInter();
-						orderInter.Start();
+						ChequeInter.Start();
 						break;
 					case 3:
-						var chequeInter = new ChequeInter();
-						chequeInter.Start();
+						TablesInter.Start();
 						break;
 					case 4:
-						toDoProgram= false;
+						ItemsInter.Start(foodRepository, drinkRepository);
+						break;
+					case 5:
+						toDoProgram = false;
 						break;
 					default:
 						break;

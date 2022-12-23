@@ -3,16 +3,11 @@ using Restaurant.Repositories;
 
 namespace Restaurant.Classes
 {
-	public class TablesInter
+	public static class TablesInter
 	{
-		public void Start()
+		public static void Start()
 		{
 			bool toDoTablesInter = true;
-			Validation validation = new Validation();
-			TableUpdate tableUpdate = new TableUpdate();
-			TableDelete tableDelete = new TableDelete();
-			TableInsert tableInsert = new TableInsert();
-			TableRepository.CreateTables();
 
 			while (toDoTablesInter)
 			{
@@ -20,7 +15,7 @@ namespace Restaurant.Classes
 				Console.WriteLine("[1] Staliukų sąrašas \n[2] Įterpti naują staliuką \n[3] Atnaujinti esamą staliuką  \n[4] Ištrinti esamą staliuką \n[5] Grįžti atgal");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite:");
-				var input = validation.GetValidNumbersFromConsole(5);
+				var input = Validation.GetValidNumbersFromConsole(5);
 				switch (input)
 				{
 					case 1:
@@ -29,15 +24,15 @@ namespace Restaurant.Classes
 						Console.ReadKey();
 						break;
 					case 2:
-						tableInsert.InsertTableInTablesList();
+						TableInsert.InsertTableInTablesList();
 						Console.ReadKey();
 						break;
 					case 3:
-						tableUpdate.UpdateTableInTablesList();
+						TableUpdate.UpdateTableInTablesList();
 						Console.ReadKey();
 						break;
 					case 4:
-						tableDelete.DeleteTableFromTablesList();
+						TableDelete.DeleteTableFromTablesList();
 						Console.ReadKey();
 						break;
 					case 5:

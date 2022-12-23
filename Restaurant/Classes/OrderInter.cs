@@ -1,25 +1,25 @@
 ﻿namespace Restaurant.Classes
 {
-	public class OrderInter
+	public static class OrderInter
 	{
-		public void Start()
+		public static void Start()
 		{
 			bool toDoOrderInter = true;
-			Validation validation = new Validation();
-
+			
 			while (toDoOrderInter)
 			{
 				Console.Clear();
-				Console.WriteLine("[1] Užsakymų informacija \n[2] Kurti užsakymą \n[3] Naikinti užsakymą \n[4] Grįžti atgal");
-				var input = validation.GetValidNumbersFromConsole(4);
+				Console.WriteLine("[1] Kurti užsakymą \n[2] Atnaujinti užsakymą. \n[3] Naikinti užsakymą \n[4] Peržiūrėti užsakymą \n[5] Visi įvykdyti užsakymai\n[6] Grįžti atgal");
+				var input = Validation.GetValidNumbersFromConsole(6);
 				switch (input)
 				{
 					case 1:
-						Console.WriteLine("Čia bus informacija apie esamus užsakymus");
+						Console.WriteLine("Kurti užsakymą: ");
+						OrderCreate.CreateOrder();
 						Console.ReadKey();
 						break;
 					case 2:
-						Console.WriteLine("Čia bus kuriami nauji užsakymai");
+						Console.WriteLine("Atnaujinti užsakymą; ");
 						Console.ReadKey();
 						break;
 					case 3:
@@ -27,6 +27,13 @@
 						Console.ReadKey();
 						break;
 					case 4:
+						Console.WriteLine("Peržiūrėti užsakymą");
+						Console.ReadKey();
+						break;
+					case 5:
+						Console.WriteLine("Visi įvykdyti užsakymai. ");
+						break;
+					case 6:
 						toDoOrderInter= false;
 						break;
 					default: 

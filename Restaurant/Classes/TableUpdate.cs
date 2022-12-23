@@ -3,25 +3,22 @@ using System.IO.Compression;
 
 namespace Restaurant.Classes
 {
-	public class TableUpdate
+	public static class TableUpdate
 	{
-		public void UpdateTableInTablesList()
+		public static void UpdateTableInTablesList()
 		{
-			Validation validation = new Validation();
-			
 			Console.WriteLine("Pasirinkite: ");
 			Console.WriteLine("[1] Atnaujinti staliuko numerį. [2] Atnaujinti staliuko vietų skaičių.");
-			var input = validation.GetValidNumbersFromConsole(2);
+			var input = Validation.GetValidNumbersFromConsole(2);
 			switch (input)
 			{
 				case 1:
 					Console.WriteLine("Įveskite staliuko numerį, kurį reikia pakeisti. ");
-					var input1 = validation.GetValidIntergerNumber();
-					bool goodTable = TableRepository.IsNumberOfTableInTablesList(input1);
-					if (goodTable)
+					var input1 = Validation.GetValidIntergerNumber();
+					if (TableRepository.IsNumberOfTableInTablesList(input1))
 					{
 						Console.WriteLine("Įveskite naują staliuko numerį.");
-						var input2 = validation.GetValidIntergerNumber();
+						var input2 = Validation.GetValidIntergerNumber();
 						TableRepository.UpdateTableNumber(input1, input2);
 						Console.WriteLine("Staliuko numeris atnaujintas. ");
 						Console.ReadKey();
@@ -33,12 +30,11 @@ namespace Restaurant.Classes
 					break;
 				case 2:
 					Console.WriteLine("Įveskite staliuko numerį, kurio pasikeitė vietų skaičius. ");
-					input1 = validation.GetValidIntergerNumber();
-					goodTable = TableRepository.IsNumberOfTableInTablesList(input1);
-					if (goodTable)
+					input1 = Validation.GetValidIntergerNumber();
+					if (TableRepository.IsNumberOfTableInTablesList(input1))
 					{
 						Console.WriteLine("Įveskite naują staliuko vietų skaičių: ");
-						var input2 = validation.GetValidIntergerNumber();
+						var input2 = Validation.GetValidIntergerNumber();
 						TableRepository.UpdateSeatsOfTableNumber(input1, input2);
 						Console.WriteLine("Staliuko vietų skaičius atnaujintas. ");
 						Console.ReadKey();

@@ -2,17 +2,16 @@
 
 namespace Restaurant.Classes
 {
-	public class TableInsert
+	public static class TableInsert
 	{
-		public void InsertTableInTablesList()
+		public static void InsertTableInTablesList()
 		{
-			Validation validation= new Validation();
-
 			Console.WriteLine("Staliukų įterpimas į sąrašą. ");
 			Console.WriteLine();
 			Console.WriteLine("Įveskite naujojo staliuko vietų skaičių");
-			var input = validation.GetValidIntergerNumber();
+			var input = Validation.GetValidIntergerNumber();
 			TableRepository.InsertInToTableList(input);
+			TableRepository.WriteDataToJsonFile();
 			Console.WriteLine("Naujas staliukas įvestas. ");
 		}
 	}

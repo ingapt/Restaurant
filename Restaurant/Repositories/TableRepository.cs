@@ -1,5 +1,5 @@
 ﻿using Restaurant.Entities;
-using System.Security.Cryptography.X509Certificates;
+using System.Text.Json;
 
 namespace Restaurant.Repositories
 {
@@ -7,13 +7,24 @@ namespace Restaurant.Repositories
 	{
 		public static List<Table> Tables { get; set; } = new List<Table>();
 
-		public static List<Table> CreateTables()
-		{ 
-			Tables.Add(new Table(1, 5, true));
-			Tables.Add(new Table(2, 4, true));
-			Tables.Add(new Table(3, 4, true));
-			Tables.Add(new Table(4, 2, true));
-			Tables.Add(new Table(5, 3, true));
+		public static List<Table> ReadTablesFromFile(string path)
+		{
+			var itemList = new List<Table>();
+
+			using (StreamReader reader = new StreamReader(path))
+			{
+				string json = reader.ReadToEnd();
+				itemList = JsonSerializer.Deserialize<List<Table>>(json);
+
+			}
+
+			if (itemList != null && itemList.Count > 0)
+			{
+				foreach (var item in itemList)
+				{
+					Tables.Add(item);
+				}
+			}
 
 			return Tables;
 		}
@@ -35,7 +46,7 @@ namespace Restaurant.Repositories
 			}
 		}
 
-		public static void InsertInToTableList(int seatsNum)
+		public static void InsertInToTableList(this int seatsNum)
 		{
 			var num = Tables.Last().Num;
 			num = num + 1;
@@ -44,25 +55,25 @@ namespace Restaurant.Repositories
 
 		}
 
-		public static bool IsNumberOfTableInTablesList(int number)
+		public static bool IsNumberOfTableInTablesList(this int number)
 		{
 			
 			return Tables.Exists(x => x.Num == number);
 		
 		}
-		public static void UpdateTableNumber(int number, int newNumber)
+		public static void UpdateTableNumber(this int number, int newNumber)
 		{
 			var table = Tables.SingleOrDefault(x => x.Num == number);
 			table.Num = newNumber;
 		}
 
-		public static void UpdateSeatsOfTableNumber(int number, int newNumber)
+		public static void UpdateSeatsOfTableNumber(this int number, int newNumber)
 		{
 			var table = Tables.SingleOrDefault(x => x.Num == number);
 			table.SeatsNum = newNumber;
 		}
 
-		public static bool TableStatusIsFree(int number)
+		public static bool TableStatusIsFree(this int number)
 		{
 			var table = Tables.SingleOrDefault(x => x.Num == number);
 			bool tableStatus = table.Status;
@@ -70,10 +81,17 @@ namespace Restaurant.Repositories
 			return tableStatus;
 		}
 
-		public static void DeleteTableFromList(int number)
+		public static void DeleteTableFromList(this int number)
 		{
 			var table = Tables.SingleOrDefault(x => x.Num == number);
 			Tables.Remove(table);
+		}
+
+		public static void WriteDataToJsonFile()
+		{ 
+			var listToJson = JsonSerializer.Serialize(Tables);
+			var path = @"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json";
+			File.WriteAllText(path, listToJson);
 		}
 	}
 }

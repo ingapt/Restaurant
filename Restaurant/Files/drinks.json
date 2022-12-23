@@ -1,0 +1,93 @@
+[
+	{
+		"Id": 1,
+		"Name": "Arbata",
+		"Price": 12.04
+	},
+	{
+		"Id": 2, 
+		"Name": "Latte kava",
+		"Price": 4.96
+	},
+	{
+		"Id": 3,
+		"Name": "Juoda kava",
+		"Price": 15.66
+	},
+	{
+		"Id": 4,
+		"Name": "Expresso kava",
+		"Price": 19.13
+	},
+	{
+		"Id": 5,
+		"Name": "Apelsinų sultys",
+		"Price": 11.55
+	},
+	{
+		"Id": 6,
+		"Name": "Ananasų sultys",
+		"Price": 7.12
+	},
+	{
+		"Id": 7,
+		"Name": "Multivitaminų sultys",
+		"Price": 11.97
+	},
+	{
+		"Id": 8,
+		"Name": "Obuolių sultys",
+		"Price": 4.05
+	},
+	{
+		"Id": 9,
+		"Name": "Braškinis pieniškas kokteilis",
+		"Price": 9.12
+	},
+	{
+		"Id": 10,
+		"Name": "Vanilinis pieniškas kokteilis",
+		"Price": 16.33
+	},
+	{
+		"Id": 11,
+		"Name": "Ledkalnis",
+		"Price": 2.14
+	},
+	{
+		"Id": 12,
+		"Name": "Tamsus alus",
+		"Price": 6.98
+	},
+	{
+		"Id": 13,
+		"Name": "Šviesus alus",
+		"Price": 17.09
+	},
+	{
+		"Id": 14,
+		"Name": "Sausas vynas",
+		"Price": 17.89
+	},
+	{
+		"Id": 15,
+		"Name": "Saldus vynas",
+		"Price": 8.36
+	},
+	{
+		"Id": 16,
+		"Name": "Karštas vynas",
+		"Price": 18.33
+	},
+	{
+		"Id": 17,
+		"Name": "Sausas šampanas",
+		"Price": 7.23
+	},
+	{
+		"Id": 18,
+		"Name": "Saldus šampanas",
+		"Price": 7.24
+	}
+]
+

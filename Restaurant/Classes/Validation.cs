@@ -2,27 +2,19 @@
 
 namespace Restaurant.Classes
 {
-	public class Validation
+	public static class Validation
 	{
-		public int GetValidNumbersFromConsole(int num)
+		public static int GetValidNumbersFromConsole(this int options)
 		{
 			bool isCorrectNumber = false;
 			int value = 0;
 			while (!isCorrectNumber)
 			{
 				string userInput = Console.ReadLine();
-				if (int.TryParse(userInput, out value))
+				if (int.TryParse(userInput, out value) && value <= options && value > 0)
 				{
-					if (value > 0 && value <= num)
-					{
-						return value;
-						isCorrectNumber = true;
-					}
-					else
-					{
-						Console.WriteLine("Įveskite tinkamą pasirinkimą.");
+					isCorrectNumber = true;
 
-					}
 				}
 				else
 				{
@@ -32,7 +24,7 @@ namespace Restaurant.Classes
 			return value;
 		}
 
-		public int GetValidIntergerNumber()
+		public static int GetValidIntergerNumber()
 		{
 			bool isCorrectNumber = false;
 			int value = 0;
@@ -40,13 +32,34 @@ namespace Restaurant.Classes
 			while (!isCorrectNumber)
 			{
 				string userInput = Console.ReadLine();
-				if (int.TryParse(userInput, out value))
+				if (int.TryParse(userInput, out value) && value > 0)
 				{
 					isCorrectNumber = true;
 				}
 				else
 				{
 					Console.WriteLine("Įveskite staliuko vietų skaičių. ");
+				}
+			}
+
+			return value;
+		}
+
+		public static double GetValidDoubleNumber() 
+		{
+			bool isCorrectNumber = false;
+			double value = 0;
+
+			while (!isCorrectNumber)
+			{
+				string userInput = Console.ReadLine();
+				if (double.TryParse(userInput, out value) && value > 0)
+				{
+					isCorrectNumber = true;
+				}
+				else
+				{
+					Console.WriteLine("Įveskite tinkamą skaičių. pvz: 2.50 ");
 				}
 			}
 

@@ -2,21 +2,17 @@
 
 namespace Restaurant.Classes
 {
-	public class TableDelete
+	public static class TableDelete
 	{
-		public void DeleteTableFromTablesList()
+		public static void DeleteTableFromTablesList()
 		{ 
-			Validation validation = new Validation();
-
 			Console.WriteLine("Ištrinti staliuką: ");
 			Console.WriteLine();
 			Console.WriteLine("Įveskite staliuko numerį, kurį reikia ištrinti. ");
-			var input = validation.GetValidIntergerNumber();
-			bool goodTable = TableRepository.IsNumberOfTableInTablesList(input);
-			if (goodTable)
+			var input = Validation.GetValidIntergerNumber();
+			if (TableRepository.IsNumberOfTableInTablesList(input))
 			{
-				bool goodTableStatus = TableRepository.TableStatusIsFree(input);
-				if (goodTableStatus)
+				if (TableRepository.TableStatusIsFree(input))
 				{
 					TableRepository.DeleteTableFromList(input);
 					Console.WriteLine("Staliukas ištrintas. ");

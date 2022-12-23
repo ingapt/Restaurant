@@ -2,18 +2,17 @@
 {
 	public class ChequeInter
 	{
-		public void Start()
+		public static void Start()
 		{ 
 			bool toDoChequeInter = true;
-			Validation validation = new Validation();
-
+			
 			while (toDoChequeInter)
 			{ 
 				Console.Clear();
 				Console.WriteLine("[1] Čekiai \n[2] Kurti čekį \n[3] Ištrinti čekį \n[4] Grįžti atgal");
 				Console.WriteLine();
 				Console.WriteLine("Pasirinkite: ");
-				var input = validation.GetValidNumbersFromConsole(4);
+				var input = Validation.GetValidNumbersFromConsole(4);
 				switch (input)
 				{
 					case 1:
