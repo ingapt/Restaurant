@@ -20,9 +20,10 @@ namespace Restaurant.Classes
 						ItemInsert.DrinkItemInsert(drinkRepository);
 						break;
 					case 2:
+						ItemUpdate.DrinkItemUpdate(drinkRepository);
 						break;
 					case 3:
-
+						ItemDelete.DrinkItemDelete(drinkRepository);
 						break;
 					case 4:
 						toDo = false;

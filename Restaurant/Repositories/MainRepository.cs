@@ -1,6 +1,10 @@
-﻿using Restaurant.Interfaces;
+﻿using Restaurant.Entities;
+using Restaurant.Interfaces;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
+using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Unicode;
 
 namespace Restaurant.Repositories
 {
@@ -58,20 +62,40 @@ namespace Restaurant.Repositories
 			return AnyList.Last().Id;
 		}
 
-		public void CreateJsonFile(List<T> list)
+		public bool IsItemIdInItemsList(int id)
+		{ 
+			return AnyList.Exists(item => item.Id == id);
+		}
+
+		public void DeleteItemFromList(int id)
+		{ 
+			var item = AnyList.SingleOrDefault(item => item.Id == id);
+			AnyList.Remove(item);
+		}
+
+		public void WriteOrdersToJsonFile(List<T> list)
 		{
 			var jsonList = JsonSerializer.Serialize(list);
 			var path = @"./orders.json";
 			File.WriteAllText(path, jsonList);
 		}
 
-		public void WriteToJsonFile(List<T> list, string fileName)
+		public void WriteItemsToJsonFile(List<T> list, string fileName)
 		{
 			string directory = @"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\";
 
-			var jsonList = JsonSerializer.Serialize(list);
+			var encoderSettings = new TextEncoderSettings();
+			encoderSettings.AllowCharacters('\u0105', '\u010D', '\u0119', '\u0117', '\u012F', '\u0161', '\u0173', '\u016B', '\u017E');
+			encoderSettings.AllowRange(UnicodeRanges.All);
+
+			var options = new JsonSerializerOptions()
+			{
+				Encoder = JavaScriptEncoder.Create(encoderSettings),
+				WriteIndented = true
+			};
+			var jsonList = JsonSerializer.Serialize(list, options);
 			var path = Path.Combine(directory, fileName);
-			File.WriteAllText(path, jsonList, Encoding.UTF8);
+			File.WriteAllText(path, jsonList);
 		}
 	}
 }

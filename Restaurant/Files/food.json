@@ -1,1 +1,112 @@
-﻿[{"Id":1,"Name":"Cezario salotos","Price":1.87},{"Id":2,"Name":"Itališkos salotos","Price":6.62},{"Id":3,"Name":"Liežuvio salotos","Price":2.87},{"Id":4,"Name":"Aštri sriuba","Price":4.49},{"Id":5,"Name":"Šaltibarščiai","Price":6.98},{"Id":6,"Name":"Jūros lydeka, Užkepta daržovėmis","Price":4.98},{"Id":7,"Name":"Karpio kepsnys","Price":7.45},{"Id":8,"Name":"Tradicinis karbonadas","Price":7.7},{"Id":9,"Name":"Karbonadas su pievagrybiais","Price":4.82},{"Id":10,"Name":"Kepta vištienos filė su ananasais","Price":5.75},{"Id":11,"Name":"Cepelinai su mėsa","Price":3.26},{"Id":12,"Name":"Cepelinai su varške","Price":2.1},{"Id":13,"Name":"Lietiniai su kumpiu ir sūriu","Price":5.74},{"Id":14,"Name":"Lietiniai su mėsa","Price":7.7},{"Id":15,"Name":"Lietiniai su varške","Price":7.15},{"Id":16,"Name":"Karšta duona su sūriu, majonezu ir česnaku","Price":1.64},{"Id":17,"Name":"Duonos lazdelės su sūriu","Price":5.99},{"Id":18,"Name":"Karpio vyniotinis su padažu","Price":1.78},{"Id":19,"Name":"Naminės salotos","Price":5.42},{"Id":20,"Name":"Ledai su priedais","Price":2.6},{"Id":21,"Name":"Jūros lydeka baravykų padaže","Price":6.5},{"Id":22,"Name":"Bulviniai blynai su mėsa","Price":4.5}]
+[
+  {
+    "Id": 1,
+    "Name": "Cezario salotos",
+    "Price": 1.87
+  },
+  {
+    "Id": 2,
+    "Name": "Itališkos salotos",
+    "Price": 6.62
+  },
+  {
+    "Id": 3,
+    "Name": "Liežuvio salotos",
+    "Price": 2.87
+  },
+  {
+    "Id": 4,
+    "Name": "Aštri sriuba",
+    "Price": 4.49
+  },
+  {
+    "Id": 5,
+    "Name": "Šaltibarščiai",
+    "Price": 3.5
+  },
+  {
+    "Id": 6,
+    "Name": "Jūros lydeka, Užkepta daržovėmis",
+    "Price": 4.98
+  },
+  {
+    "Id": 7,
+    "Name": "Karpio kepsnys",
+    "Price": 7.45
+  },
+  {
+    "Id": 8,
+    "Name": "Tradicinis karbonadas",
+    "Price": 7.7
+  },
+  {
+    "Id": 9,
+    "Name": "Karbonadas su pievagrybiais",
+    "Price": 4.82
+  },
+  {
+    "Id": 10,
+    "Name": "Kepta vištienos filė su ananasais",
+    "Price": 5.75
+  },
+  {
+    "Id": 11,
+    "Name": "Cepelinai su mėsa",
+    "Price": 3.26
+  },
+  {
+    "Id": 12,
+    "Name": "Cepelinai su varške",
+    "Price": 2.1
+  },
+  {
+    "Id": 13,
+    "Name": "Lietiniai su kumpiu ir sūriu",
+    "Price": 5.74
+  },
+  {
+    "Id": 14,
+    "Name": "Lietiniai su mėsa",
+    "Price": 7.7
+  },
+  {
+    "Id": 15,
+    "Name": "Lietiniai su varške",
+    "Price": 7.15
+  },
+  {
+    "Id": 16,
+    "Name": "Karšta duona su sūriu, majonezu ir česnaku",
+    "Price": 1.64
+  },
+  {
+    "Id": 17,
+    "Name": "Duonos lazdelės su sūriu",
+    "Price": 5.99
+  },
+  {
+    "Id": 18,
+    "Name": "Karpio vyniotinis su padažu",
+    "Price": 1.78
+  },
+  {
+    "Id": 19,
+    "Name": "Naminės salotos",
+    "Price": 5.42
+  },
+  {
+    "Id": 20,
+    "Name": "Ledai su priedais",
+    "Price": 2.6
+  },
+  {
+    "Id": 21,
+    "Name": "Jūros lydeka baravykų padaže",
+    "Price": 6.5
+  },
+  {
+    "Id": 22,
+    "Name": "Bulviniai blynai su mėsa",
+    "Price": 4.5
+  }
+]

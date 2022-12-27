@@ -1,6 +1,6 @@
 ﻿using Restaurant.Entities;
 using Restaurant.Repositories;
-using System.Net.WebSockets;
+
 
 namespace Restaurant.Classes
 {
@@ -19,7 +19,7 @@ namespace Restaurant.Classes
 			var price = Validation.GetValidDoubleNumber();
 
 			food.Add(new Item(id, name, price));
-			foodRepository.WriteToJsonFile(food, "food.json");
+			foodRepository.WriteItemsToJsonFile(food, "food.json");
 		}
 
 		public static void DrinkItemInsert(this MainRepository<Item> drinkRepository) 
@@ -35,7 +35,7 @@ namespace Restaurant.Classes
 			var price = Validation.GetValidDoubleNumber();
 
 			drinks.Add(new Item(id, name, price));
-			drinkRepository.WriteToJsonFile(drinks, "drinks.json");
+			drinkRepository.WriteItemsToJsonFile(drinks, "drinks.json");
 
 		}
 	}

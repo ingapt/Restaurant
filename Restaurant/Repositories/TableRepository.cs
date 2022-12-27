@@ -31,7 +31,7 @@ namespace Restaurant.Repositories
 
 		public static void DisplayTables()
 		{
-			
+
 			foreach (var table in Tables)
 			{
 				if (table.Status == true)
@@ -42,7 +42,7 @@ namespace Restaurant.Repositories
 				{
 					Console.WriteLine($"{table.Num} {table.SeatsNum} Užimtas");
 				}
-				
+
 			}
 		}
 
@@ -57,9 +57,9 @@ namespace Restaurant.Repositories
 
 		public static bool IsNumberOfTableInTablesList(this int number)
 		{
-			
+
 			return Tables.Exists(x => x.Num == number);
-		
+
 		}
 		public static void UpdateTableNumber(this int number, int newNumber)
 		{

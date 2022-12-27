@@ -21,9 +21,10 @@ namespace Restaurant.Classes
 						ItemInsert.FoodItemInsert(foodRepository);
 						break;
 					case 2:
+						ItemUpdate.FoodItemUpdate(foodRepository);
 						break;
 					case 3:
-
+						ItemDelete.FoodItemDelete(foodRepository);
 						break;
 					case 4:
 						toDo = false;

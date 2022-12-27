@@ -21,6 +21,7 @@ namespace Restaurant.Classes
 						FoodInter.Start(foodRepository);
 						break;
 					case 2:
+						DrinkInter.Start(drinkRepository);
 						break;
 					case 3:
 						toDo= false;
