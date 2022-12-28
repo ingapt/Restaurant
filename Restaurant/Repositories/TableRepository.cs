@@ -29,6 +29,17 @@ namespace Restaurant.Repositories
 			return Tables;
 		}
 
+		public static List<Table> Retreive()
+		{
+			return Tables;
+		}
+
+		public static int GetLastTableNum()
+		{
+			return Tables.Last().Num;
+			
+		}
+
 		public static void DisplayTables()
 		{
 
@@ -73,12 +84,31 @@ namespace Restaurant.Repositories
 			table.SeatsNum = newNumber;
 		}
 
-		public static bool TableStatusIsFree(this int number)
+		public static bool TableStatusIsFree(this int tableNumber)
 		{
-			var table = Tables.SingleOrDefault(x => x.Num == number);
+			var table = Tables.SingleOrDefault(x => x.Num == tableNumber);
 			bool tableStatus = table.Status;
 
 			return tableStatus;
+		}
+		public static void ChangeTableStatus(this int tableNumber)
+		{
+
+			foreach (var table in Tables)
+			{
+				var status = false;
+				if (table.Num == tableNumber)
+				{
+					if (table.Status == true)
+					{
+						table.Status = false;
+					}
+					else if (table.Status == false)
+					{
+						table.Status = true;
+					}
+				}
+			}
 		}
 
 		public static void DeleteTableFromList(this int number)
@@ -87,8 +117,13 @@ namespace Restaurant.Repositories
 			Tables.Remove(table);
 		}
 
+		public static bool IsAnyTableFalse()
+		{
+			return Tables.Exists(x => x.Status == true);
+		}
+
 		public static void WriteDataToJsonFile()
-		{ 
+		{
 			var listToJson = JsonSerializer.Serialize(Tables);
 			var path = @"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json";
 			File.WriteAllText(path, listToJson);

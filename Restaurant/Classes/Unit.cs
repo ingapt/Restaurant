@@ -12,6 +12,8 @@ namespace Restaurant.Classes
 			MainRepository<Item> drinkRepository = new MainRepository<Item>();
 			drinkRepository.ReadDataFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\drinks.json");
 			TableRepository.ReadTablesFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json");
+			MainRepository<Item> orderRepository = new MainRepository<Item>();
+			
 			bool toDoProgram = true;
 
 			while (toDoProgram)
@@ -24,7 +26,7 @@ namespace Restaurant.Classes
 				switch (input)
 				{
 					case 1:
-						OrderInter.Start();
+						OrderInter.Start(foodRepository, drinkRepository, orderRepository);
 						break;
 					case 2:
 						ChequeInter.Start();

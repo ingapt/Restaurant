@@ -1,8 +1,11 @@
-﻿namespace Restaurant.Classes
+﻿using Restaurant.Entities;
+using Restaurant.Repositories;
+
+namespace Restaurant.Classes
 {
 	public static class OrderInter
 	{
-		public static void Start()
+		public static void Start(this MainRepository<Item> foodRepository, MainRepository<Item> drinkRepository, MainRepository<Item> orderRepository)
 		{
 			bool toDoOrderInter = true;
 			
@@ -15,7 +18,7 @@
 				{
 					case 1:
 						Console.WriteLine("Kurti užsakymą: ");
-						OrderCreate.CreateOrder();
+						OrderCreate.CreateOrder(foodRepository, drinkRepository, orderRepository);
 						Console.ReadKey();
 						break;
 					case 2:

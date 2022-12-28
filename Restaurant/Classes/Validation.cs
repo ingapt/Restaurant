@@ -18,7 +18,7 @@ namespace Restaurant.Classes
 				}
 				else
 				{
-					Console.WriteLine("Įveskite tinkamą pasirinkimą. ");
+					Console.WriteLine($"Įveskite skaičių nuo 1 iki {options}");
 				}
 			}
 			return value;
@@ -61,6 +61,29 @@ namespace Restaurant.Classes
 				{
 					Console.WriteLine("Įveskite tinkamą skaičių. pvz: 2.50 ");
 				}
+			}
+
+			return value;
+		}
+
+		public static char GetYesOrNoFromConsole()
+		{ 
+			bool isCorrectInput = false;
+			char value = ' ';
+			while (!isCorrectInput)
+			{ 
+				var userInput = char.Parse(Console.ReadLine());
+				value = Char.ToUpper(userInput);
+
+				if (value.Equals('T') || value.Equals('N'))
+				{
+					isCorrectInput = true;
+				}
+				else
+				{
+					Console.WriteLine("Įveskite raidę: T, t - Taip; N, n - Ne");
+				}
+
 			}
 
 			return value;
