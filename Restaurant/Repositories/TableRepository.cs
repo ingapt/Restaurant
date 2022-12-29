@@ -57,6 +57,22 @@ namespace Restaurant.Repositories
 			}
 		}
 
+		public static void DisplayTablesWithoutSeats()
+		{
+			foreach (var table in Tables)
+			{
+				if (table.Status == true)
+				{
+					Console.WriteLine($"{table.Num} Laisvas");
+				}
+				else if (table.Status == false)
+				{
+					Console.WriteLine($"{table.Num} Užimtas");
+				}
+
+			}
+		}
+
 		public static void InsertInToTableList(this int seatsNum)
 		{
 			var num = Tables.Last().Num;

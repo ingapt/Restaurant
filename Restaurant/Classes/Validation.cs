@@ -18,7 +18,7 @@ namespace Restaurant.Classes
 				}
 				else
 				{
-					Console.WriteLine($"Įveskite skaičių nuo 1 iki {options}");
+					Console.WriteLine($"Pasirinkite nuo 1 iki {options}");
 				}
 			}
 			return value;

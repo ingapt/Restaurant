@@ -57,6 +57,11 @@ namespace Restaurant.Repositories
 			AnyList.Add(Item);
 		}
 
+		public bool IsAnyItemInList(List<T> items)
+		{
+			return AnyList.Any();
+		}
+
 		public int GetLastId(List<T> items)
 		{ 
 			return AnyList.Last().Id;

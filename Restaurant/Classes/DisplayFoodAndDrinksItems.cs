@@ -5,10 +5,8 @@ namespace Restaurant.Classes
 {
 	public static class DisplayFoodAndDrinksItems
 	{
-		public static void FoodItemsToDisplay(this MainRepository<Item> foodRepository)
+		public static void FoodItemsToDisplay(this List<Item> foodList)
 		{
-			var foodList = foodRepository.Retreive();
-
 			Console.WriteLine("Patiekalų Meniu: ");
 			Console.WriteLine();
 			foreach (var item in foodList)

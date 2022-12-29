@@ -1,9 +1,11 @@
-﻿using Restaurant.Entities;
+﻿using Restaurant.Classes.Admin;
+using Restaurant.Classes.Waitress;
+using Restaurant.Entities;
 using Restaurant.Repositories;
 
 namespace Restaurant.Classes
 {
-	public class Unit
+    public class Unit
 	{
 		public static void Start()
 		{
@@ -13,37 +15,29 @@ namespace Restaurant.Classes
 			drinkRepository.ReadDataFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\drinks.json");
 			TableRepository.ReadTablesFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json");
 			MainRepository<Item> orderRepository = new MainRepository<Item>();
-			
-			bool toDoProgram = true;
+			bool toDo = true;
 
-			while (toDoProgram)
+			while (toDo)
 			{
 				Console.Clear();
-				Console.WriteLine("[1] Užsakymai \n[2] Čekiai \n[3] Staliukai \n[4] Patiekalai ir gėrimai \n[5] Baigti");
-				Console.WriteLine();
-				Console.WriteLine("Pasirinkite: ");
-				var input = Validation.GetValidNumbersFromConsole(5);
+				Console.WriteLine("Pasirinkite: \n[1] Padavėja(-as) \n[2] Admin \n[3] Baigti darbą");
+				var input = Validation.GetValidNumbersFromConsole(3);
 				switch (input)
 				{
 					case 1:
-						OrderInter.Start(foodRepository, drinkRepository, orderRepository);
+						WaitressInter.Start(foodRepository, drinkRepository, orderRepository);
 						break;
 					case 2:
-						ChequeInter.Start();
+						AdminInter.Start(foodRepository, drinkRepository, orderRepository);
 						break;
 					case 3:
-						TablesInter.Start();
-						break;
-					case 4:
-						ItemsInter.Start(foodRepository, drinkRepository);
-						break;
-					case 5:
-						toDoProgram = false;
+						toDo= false;
 						break;
 					default:
 						break;
 				}
 			}
+
 		}
 	}
 }
