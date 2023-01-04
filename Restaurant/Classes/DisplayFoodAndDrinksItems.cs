@@ -15,10 +15,8 @@ namespace Restaurant.Classes
 			}
 		}
 
-		public static void DrinkItemsToDisplay(this MainRepository<Item> drinkRepository)
+		public static void DrinkItemsToDisplay(this List<Item> drinksList)
 		{ 
-			var drinksList = drinkRepository.Retreive();
-
 			Console.WriteLine("Gėrimų Meniu: ");
 			Console.WriteLine();
 			foreach (var item in drinksList)
