@@ -14,7 +14,7 @@ namespace Restaurant.Classes
 			MainRepository<Item> drinkRepository = new MainRepository<Item>();
 			drinkRepository.ReadDataFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\drinks.json");
 			TableRepository.ReadTablesFromFile(@"C:\Users\Ingiux\source\repos\Restaurant\Restaurant\Files\tables.json");
-			MainRepository<Item> orderRepository = new MainRepository<Item>();
+			MainRepository<Order> orderRepository = new MainRepository<Order>();
 			bool toDo = true;
 
 			while (toDo)

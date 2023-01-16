@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Restaurant.Entities;
+using Restaurant.Repositories;
+using System;
 
 namespace Restaurant.Classes
 {
@@ -87,6 +89,21 @@ namespace Restaurant.Classes
 			}
 
 			return value;
+		}
+
+		public static int GetOrderId(this List<Order> orderList, int tableNum)
+		{
+
+			foreach (var order in orderList)
+			{
+				if (order.TableNum == tableNum)
+				{
+					var orderId = order.Id;
+					return orderId;
+				}
+			}
+
+			return 0;
 		}
 	}
 }

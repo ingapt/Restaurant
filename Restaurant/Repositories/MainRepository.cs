@@ -1,7 +1,4 @@
-﻿using Restaurant.Entities;
-using Restaurant.Interfaces;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
+﻿using Restaurant.Interfaces;
 using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Unicode;

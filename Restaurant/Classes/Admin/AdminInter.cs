@@ -7,7 +7,7 @@ namespace Restaurant.Classes.Admin
 {
     public static class AdminInter
     {
-        public static void Start(this MainRepository<Item> foodRepository, MainRepository<Item> drinkRepository, MainRepository<Item> orderRepository)
+        public static void Start(this MainRepository<Item> foodRepository, MainRepository<Item> drinkRepository, MainRepository<Order> orderRepository)
         {
             bool toDo = true;
 

@@ -5,7 +5,7 @@ namespace Restaurant.Classes.Waitress
 {
     public static class WaitressInter
     {
-        public static void Start(this MainRepository<Item> foodRepository, MainRepository<Item> drinkRepository, MainRepository<Item> orderRepository)
+        public static void Start(this MainRepository<Item> foodRepository, MainRepository<Item> drinkRepository, MainRepository<Order> orderRepository)
         {
             Console.Clear();
             TableRepository.DisplayTablesWithoutSeats();
