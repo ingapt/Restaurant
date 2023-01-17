@@ -56,7 +56,8 @@ namespace Restaurant.Classes.Waitress
 				var orderedDrinks = ChooseFoodAndDrinks.OrderedDrinks(drinkRepository.GetLastId(drinksList));
 
 
-				var dateTime = DateTime.Today;
+				var dateTime = DateTime.Now.Date;
+				
 
 				orderList.Add(new Order(orderId, tableNumber, orderedFood, orderedDrinks, dateTime));
 				Console.WriteLine("Užsakymas sukurtas.");

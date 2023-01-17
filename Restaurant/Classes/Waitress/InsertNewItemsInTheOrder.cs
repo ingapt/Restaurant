@@ -36,7 +36,7 @@ namespace Restaurant.Classes.Waitress
 			var drinkId = Validation.GetValidNumbersFromConsole(lastDrinksListItem);
 			Console.WriteLine("Įveskite kiekį: ");
 			var quantity = Validation.GetValidIntergerNumber();
-			OrderUpdate.InsertFoodInToTheFoodListOdOrder(orderList, drinkId, quantity, orderId);
+			OrderUpdate.InsertDrinkInToTheDrinksListOdOrder(orderList, drinkId, quantity, orderId);
 			Console.WriteLine("Gėrimas įtrauktas į sąrašą. ");
 			Console.ReadKey();
 		}

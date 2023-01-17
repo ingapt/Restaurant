@@ -71,6 +71,7 @@ namespace Restaurant.Classes.Waitress
 						}
 						break;
 					case 3:
+						Console.Clear();
 						if (orderRepository.Retreive().Count != 0)
 						{
 							bool cheque = true;
@@ -85,6 +86,7 @@ namespace Restaurant.Classes.Waitress
 										ChequeCreate.CreateChequeForClient(foodRepository, drinkRepository, orderRepository, tableNumber);
 										break;
 									case 2:
+										ChequeCreate.CreateChequeForRestaurant(foodRepository, drinkRepository, orderRepository, tableNumber);
 										break;
 									case 3:
 										cheque = false;

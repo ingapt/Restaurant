@@ -57,7 +57,7 @@ namespace Restaurant.Classes.Waitress
 					}
 
 					var priceWithTax = allPrice + (allPrice * 21 / 100);
-					Console.WriteLine($"Iš viso mokėti: {priceWithTax} eurų. ");
+					Console.WriteLine($"Iš viso mokėti: {priceWithTax:0.00} eur. ");
 					Console.WriteLine($"{order.Date}");
 
 					var clientCheque = new ClientCheque(orderId, foodItems, drinksItems, priceWithTax, order.Date);
@@ -69,7 +69,7 @@ namespace Restaurant.Classes.Waitress
 					{
 						var htmlMessage = HtmlGenerator.GenerateHTMLForClient(clientCheque);
 						var emailSender = new EmailSender();
-						emailSender.SendEmail("to@example.com", "Apmokėjimo čekis", htmlMessage);
+						emailSender.SendEmail("to@example.com", "Čekis klientui", htmlMessage);
 					}
 				}
 			}
@@ -80,6 +80,67 @@ namespace Restaurant.Classes.Waitress
 			var foodList = foodRepository.Retreive();
 			var drinksList = drinksRepository.Retreive();
 			var orderList = orderRepository.Retreive();
+			var foodItems = new List<ChequeItem>();
+			var drinksItems = new List<ChequeItem>();
+
+			var orderId = Validation.GetOrderId(orderList, tableNum);
+			var tableSeat = TableRepository.GetTableSeatsNumber(tableNum);
+			int i = 1;
+			double allPrice = 0;
+
+			foreach (var order in orderList)
+			{
+				if (order.Id == orderId)
+				{
+					Console.Clear();
+					Console.WriteLine("Čekis Restoranaui");
+					Console.WriteLine();
+					Console.WriteLine($"Užsakymo Numeris: {order.Id}");
+					Console.WriteLine($"Staliuko numeris: {tableNum}");
+					Console.WriteLine($"Staliuko vietų skaičius: {tableSeat}");
+					var id = order.Id;
+					foreach (var orderfood in order.FoodIdList)
+					{
+						foreach (var food in foodList)
+						{
+							if (orderfood.Id == food.Id)
+							{
+								var foodName = food.Name;
+								var price = food.Price * orderfood.Quantity;
+								allPrice += price;
+								Console.WriteLine($"{i++} {food.Name} {orderfood.Quantity} {food.Price}");
+								foodItems.Add(new ChequeItem(foodName, orderfood.Quantity, food.Price));
+							}
+						}
+					}
+
+					foreach (var orderDrink in order.DrinkIdList)
+					{
+						foreach (var drink in drinksList)
+						{
+							if (orderDrink.Id == drink.Id)
+							{
+								var drinkName = drink.Name;
+								var price = drink.Price * orderDrink.Quantity;
+								allPrice += price;
+								Console.WriteLine($"{i++} {drinkName} {orderDrink.Quantity} {drink.Price}");
+								drinksItems.Add(new ChequeItem(drinkName, orderDrink.Quantity, drink.Price));
+							}
+						}
+					}
+
+					var priceWithTax = allPrice + (allPrice * 21 / 100);
+					Console.WriteLine($"Iš viso mokėti: {priceWithTax:0.00} eur. ");
+					Console.WriteLine($"{order.Date}");
+
+					var restaurantCheque = new RestaurantCheque(orderId, tableNum , foodItems, drinksItems, priceWithTax, order.Date);
+
+					Console.WriteLine("Čekis restoranui sukurtas.");
+					var htmlMessage = HtmlGenerator.GenerateHTMLForRestaurant(restaurantCheque);
+					var emailSender = new EmailSender();
+					emailSender.SendEmail("to@example.com", "Restorano čekis", htmlMessage);
+				}
+			}
 
 
 

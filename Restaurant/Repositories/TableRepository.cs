@@ -40,6 +40,13 @@ namespace Restaurant.Repositories
 			
 		}
 
+		public static int GetTableSeatsNumber(this int tableNum)
+		{
+			var table = Tables.SingleOrDefault(x => x.Num == tableNum);
+			
+			return table.SeatsNum;
+		}
+
 		public static void DisplayTables()
 		{
 

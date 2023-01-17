@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Net.Mail;
+﻿using System.Net.Mail;
 using System.Net;
 using Restaurant.Interfaces;
-using System.Threading.Tasks.Sources;
-using Restaurant.Classes.Waitress;
 
 namespace Restaurant.Classes
 {
@@ -32,8 +26,8 @@ namespace Restaurant.Classes
 				Credentials = new NetworkCredential("7ac4b1a93592ac", "f1aa74091e0bad"),
 				EnableSsl = true
 			};
-			client.Send("from@example.com", "to@example.com", "Čekis", htmlMessage);
-			Console.WriteLine("Čekis išsiųstas klientui.");
+			client.Send("from@example.com", "to@example.com", subject, htmlMessage);
+			Console.WriteLine("Čekis išsiųstas.");
 			Console.ReadLine();
 		}
 
